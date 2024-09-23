@@ -1,0 +1,31 @@
+.cmdExo,.btnAffecter
+{
+    -fx-background-color:  #3D9ADA;
+}
+.cmdExo:hover
+{
+    -fx-background-color: #C7E8F4;
+    -fx-background-radius: 30 0 0 30;
+    -fx-text-fill: #1F48D4;
+}
+
+.apExos
+{
+    -fx-background-color: #C7E8F4;
+}
+.hbTitre
+{
+    -fx-background-color:  #3D9ADA;
+}
+.vbExos
+{
+    -fx-background-color:  #3D9ADA;
+}
+.lblTitre
+{
+    -fx-font-family: "Monotype Corsiva";
+    -fx-text-fill: white;
+    -fx-font-size: 30;
+}
+
+

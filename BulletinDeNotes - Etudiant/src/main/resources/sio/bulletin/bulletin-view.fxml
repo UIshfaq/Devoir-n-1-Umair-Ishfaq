@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.TreeView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="421.0" prefWidth="646.0" stylesheets="@../../CSS/SubventionsStyles.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sio.bulletin.BulletinController">
+   <top>
+      <HBox prefHeight="100.0" prefWidth="200.0" styleClass="hbTitre" BorderPane.alignment="CENTER">
+         <children>
+            <Label prefHeight="100.0" prefWidth="600.0" styleClass="lblTitre" text="Gestion des notes">
+               <font>
+                  <Font name="Monotype Corsiva" size="36.0" />
+               </font>
+            </Label>
+         </children>
+      </HBox>
+   </top>
+   <left>
+      <VBox prefHeight="300.0" prefWidth="130.0" spacing="50.0" styleClass="vbExos" BorderPane.alignment="CENTER">
+         <children>
+            <Button fx:id="btnMenuBulletin" alignment="BASELINE_LEFT" graphicTextGap="15.0" mnemonicParsing="false" onMouseClicked="#btnMenuClicked" prefWidth="130.0" styleClass="cmdExo" text="Bulletin">
+               <graphic>
+                  <ImageView fitHeight="31.0" fitWidth="43.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../Images/Subventions.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button fx:id="btnMenuMoyenne" alignment="BASELINE_LEFT" graphicTextGap="15.0" mnemonicParsing="false" onMouseClicked="#btnMenuClicked" prefWidth="130.0" styleClass="cmdExo" text="Moyenne">
+               <graphic>
+                  <ImageView fitHeight="31.0" fitWidth="43.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../Images/Stats.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+         </children>
+      </VBox>
+   </left>
+   <center>
+      <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <children>
+            <AnchorPane fx:id="apBulletin" onMouseClicked="#btnMenuClicked" prefHeight="300.0" prefWidth="470.0" styleClass="apExos" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <children>
+                  <Label layoutX="35.0" layoutY="30.0" text="Matières">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Label>
+                  <ListView fx:id="lvMatieres" layoutX="35.0" layoutY="50.0" prefHeight="160.0" prefWidth="100.0" />
+                  <Label layoutX="193.0" layoutY="30.0" text="Devoirs">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font></Label>
+                  <ListView fx:id="lvDevoirs" layoutX="191.0" layoutY="50.0" prefHeight="160.0" prefWidth="100.0" />
+                  <Label layoutX="329.0" layoutY="96.0" text="Trimestre">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="330.0" layoutY="160.0" text="Note">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="329.0" layoutY="30.0" text="Nom de l'étudiant">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Label>
+                  <ComboBox fx:id="cboTrimestres" layoutX="329.0" layoutY="121.0" prefWidth="150.0" />
+                  <TextField fx:id="txtNomEtudiant" layoutX="329.0" layoutY="57.0" />
+                  <TextField fx:id="txtNote" layoutX="329.0" layoutY="183.0" />
+                  <Button fx:id="btnValider" layoutX="35.0" layoutY="233.0" mnemonicParsing="false" onMouseClicked="#btnValiderClicked" prefHeight="25.0" prefWidth="444.0" styleClass="btnAffecter" text="Valider" textFill="WHITE">
+                     <font>
+                        <Font name="Monotype Corsiva" size="25.0" />
+                     </font>
+                  </Button>
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="apMoyenne" onMouseClicked="#btnMenuClicked" prefHeight="300.0" prefWidth="470.0" styleClass="apExos" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <children>
+                  <Label layoutX="14.0" layoutY="25.0" text="Matières">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Label>
+                  <ListView fx:id="lvMatieresMoyenne" layoutX="14.0" layoutY="51.0" onMouseClicked="#lvMatieresMoyenneClicked" prefHeight="160.0" prefWidth="100.0" />
+                  <TreeView fx:id="tvMoyennesParDevoirs" layoutX="128.0" layoutY="51.0" prefHeight="161.0" prefWidth="177.0" />
+                  <Label layoutX="128.0" layoutY="25.0" text="Par devoirs">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="336.0" layoutY="51.0" text="Major" />
+                  <Label layoutX="338.0" layoutY="131.0" text="Note maxi" />
+                  <TextField fx:id="txtMajor" layoutX="336.0" layoutY="77.0" />
+                  <TextField fx:id="txtNoteMaxi" layoutX="336.0" layoutY="161.0" />
+               </children>
+            </AnchorPane>
+         </children>
+      </AnchorPane>
+   </center>
+</BorderPane>
